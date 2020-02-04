@@ -14,8 +14,7 @@ public class Job extends AbstractEntity{
     private String employer;
     private String skills;
 
-    public Job() {
-    }
+    public Job() { }
 
     public Job(String anEmployer, String someSkills) {
         super();

@@ -19,7 +19,7 @@ public class Employer extends AbstractEntity {
     }
 
     public String getLocation() {
-        return location;
+        return this.location;
     }
 
     public void setLocation(String location) {

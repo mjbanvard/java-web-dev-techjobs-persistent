@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org/">
-<head th:replace="fragments :: head">
-</head>
-<body>
+<head th:replace="fragments :: head"></head>
+<body class="container  body-content">
+<h1>Skill Index</h1>
 
-<div th:replace="fragments :: page-header"></div>
+<nav th:replace="fragments :: page-header"></nav>
 
-<p th:unless="${skill} and ${skill.size()}">no jobs!</p>
+<p th:unless="${skills} and ${skills.size()}">no jobs!</p>
 
 <div class="container body-content">
     <h2>Skills</h2>
     <ul>
-        <li th:each="skill : ${skill}">
+        <li th:each="skill : ${skills}">
             <a th:href="@{'/skills/view/' + ${skill.id}}" th:text="${skill.name}"></a>
         </li>
     </ul>
