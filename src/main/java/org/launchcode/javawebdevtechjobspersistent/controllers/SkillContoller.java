@@ -32,7 +32,7 @@ public class SkillContoller {
             return "skills/add";
         } else {
             skillRepository.save(newSkill);
-            return "skills/view";
+            return "skills/index";
         }
     }
 
@@ -45,7 +45,7 @@ public class SkillContoller {
             model.addAttribute("skill", skill);
             return "skills/view";
         } else {
-            return "redirect:../";
+            return "skills/index";
         }
     }
 

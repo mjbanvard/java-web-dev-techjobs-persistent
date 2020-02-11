@@ -28,7 +28,8 @@ public class SearchController {
     }
 
     @PostMapping("results")
-    public String displaySearchResults(Model model, @RequestParam String searchType, @RequestParam String searchTerm){
+    public String displaySearchResults(Model model, @RequestParam String searchType,
+                                       @RequestParam String searchTerm){
         Iterable<Job> jobs;
         if (searchTerm.toLowerCase().equals("all") || searchTerm.equals("")){
             jobs = jobRepository.findAll();

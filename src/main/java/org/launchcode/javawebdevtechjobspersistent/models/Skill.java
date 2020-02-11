@@ -1,7 +1,10 @@
 package org.launchcode.javawebdevtechjobspersistent.models;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
 import javax.validation.constraints.Size;
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Entity
@@ -10,7 +13,11 @@ public class Skill extends AbstractEntity {
     @Size(max = 50, message = "Please keep description to 50 characters long, or less.")
     private String description;
 
-    public Skill() {}
+    @ManyToMany(mappedBy = "skills")
+    public List<Job> jobs = new ArrayList<>();
+
+    public Skill() {
+    }
 
     public Skill(String newDescription) {
         super();
@@ -28,4 +35,5 @@ public class Skill extends AbstractEntity {
     public void setDescription(String description) {
         this.description = description;
     }
+
 }
