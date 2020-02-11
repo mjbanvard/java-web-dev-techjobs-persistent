@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
-<head th:replace="fragments :: head"></head>
+<head th:replace="fragments :: head">
+</head>
 
 <body class="container  body-content">
 <h1 th:text="${'Job: ' + job.getName() }">Default Title</h1>
@@ -15,7 +16,7 @@
     </p>
     <p> Skills:
         <ul>
-            <li th:each="skill : ${job.skill}">
+            <li th:each="skill : ${job.skills}">
                 <a th:href="@{'/skills/view/' + ${skill.id}}" th:text="${skill.name}"></a>
             </li>
         </ul>

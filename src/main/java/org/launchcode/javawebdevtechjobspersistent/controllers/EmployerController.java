@@ -32,6 +32,7 @@ public class EmployerController {
             return "employers/add";
         } else {
             employerRepository.save(newEmployer);
+            model.addAttribute("employers",employerRepository.findAll());
             return "employers/index";
         }
     }
@@ -45,6 +46,7 @@ public class EmployerController {
             model.addAttribute("employers", employer);
             return "employers/view";
         } else {
+            model.addAttribute("employers",employerRepository.findAll());
             return "employers/index";
         }
     }

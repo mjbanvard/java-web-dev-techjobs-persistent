@@ -32,6 +32,7 @@ public class SkillContoller {
             return "skills/add";
         } else {
             skillRepository.save(newSkill);
+            model.addAttribute("skills",skillRepository.findAll());
             return "skills/index";
         }
     }
@@ -42,9 +43,10 @@ public class SkillContoller {
         Optional optSkill = skillRepository.findById(skillId);
         if (optSkill.isPresent()) {
             Skill skill = (Skill) optSkill.get();
-            model.addAttribute("skill", skill);
+            model.addAttribute("skills", skill);
             return "skills/view";
         } else {
+            model.addAttribute("skills", skillRepository.findAll());
             return "skills/index";
         }
     }
